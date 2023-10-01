@@ -1,8 +1,8 @@
 export default {
-  get(TODOS_STORAGE_KEY) {
-    return JSON.parse(localStorage.getItem(TODOS_STORAGE_KEY)) || [];
+  get(STORAGE_KEY) {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
   },
-  set(TODOS_STORAGE_KEY, key) {
-    localStorage.setItem(TODOS_STORAGE_KEY, JSON.stringify(key));
+  set(STORAGE_KEY, value) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
   },
 };

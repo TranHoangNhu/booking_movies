@@ -24,8 +24,8 @@ export default function renderSeat() {
   })();
 
   const seatBooked = (function () {
-    const arrBooked = storage.get("seat-booked");
     const allSeat = document.querySelectorAll(".seat");
+    const arrBooked = storage.get("seat-booked");
     for (let seat of allSeat) {
       if (arrBooked.includes(seat.textContent)) {
         seat.setAttribute("disabled", "");
