@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#offcanvasRight {
+  width: 700px;
+  border-radius: 15px;
+}
+
+body {
+  overflow-x: hidden;
+  background: url("../images/bg-body.jpg");
+  background-size: contain;
+  background-position: center center;
+  -webkit-backdrop-filter: brightness(0.2);
+          backdrop-filter: brightness(0.2);
+}
+body .screen {
+  background: url("../images/bg-screen.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 130px;
+}
+body #seating .row-seat {
+  display: grid;
+  grid-template-columns: repeat(10, auto);
+  gap: 50px;
+  font-size: 16px;
+}
+body #seating .row-seat .seat {
+  padding: 10px 0;
+  border-radius: 15px;
+}
+body #seating .row-seat .seat.booking {
+  border: 2px solid rgb(0, 147, 54);
+  background-color: rgb(0, 147, 54);
+  color: #fff;
+}
+body #seating .row-seat .seat:disabled {
+  border: 2px solid #fff;
+  background-color: rgb(229, 255, 0) !important;
+  color: #fff !important;
+  font-weight: bold !important;
+  opacity: 0.6;
+}

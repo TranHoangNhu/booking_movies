@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Movie Theater Seating</title>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.min.css">
+</head>
+
+<body>
+    <div class="container screen my-4"></div>
+    <div class="container d-flex flex-column gap-4" id="seating">
+        <!-- JavaScript code will generate the seating arrangement here -->
+    </div>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"><i class="fa-solid fa-ticket text-white me-2"></i>danh sách vé đặt</button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold fs-2" id="offcanvasRightLabel">GHẾ ĐANG ĐẶT</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">MÃ GHẾ</th>
+                        <th scope="col">GIÁ VÉ</th>
+                        <th scope="col"><i class="fa-solid fa-gear"></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="px-4 fw-bold">G5</td>
+                        <td>65.000</td>
+                        <td><button class="bg-danger text-white border-0 px-1 rounded-1"><i class="fa-solid fa-xmark"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 fw-bold">G6</td>
+                        <td>65.000</td>
+                        <td><button class="bg-danger text-white border-0 px-1 rounded-1"><i class="fa-solid fa-xmark"></i></button></td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 fw-bold">G7</td>
+                        <td>65.000</td>
+                        <td><button class="bg-danger text-white border-0 px-1 rounded-1"><i class="fa-solid fa-xmark"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
