@@ -2,10 +2,11 @@ import storage from "../util/storage.js";
 
 export default function booking() {
   let seatArr = storage.get("seat-booking");
+  let arrTicket = [];
 
   function updateTicketList() {
     const arrBooking = storage.get("seat-booking");
-    const arrTicket = arrBooking.map((id) => ({
+    arrTicket = arrBooking.map((id) => ({
       colorPrice: ["E", "F", "G"].includes(id.charAt(0))
         ? `class="fw-bold text-danger"`
         : `class="fw-bold text-success"`,
@@ -27,6 +28,24 @@ export default function booking() {
       .join("");
 
     document.querySelector("#ticketList").innerHTML = html;
+
+    // Tính tổng tiền
+    const totalPrice = arrTicket.reduce((acc, ticket) => acc + ticket.price, 0);
+    // Đếm số vé được đặt
+    const countTickets = arrTicket.reduce((count, ticket) => {
+      if (ticket.id) {
+        return count + 1;
+      }
+      return count;
+    }, 0);
+
+    // Hiển thị tổng tiền
+    document.querySelector("#totalPrice").textContent =
+      totalPrice.toLocaleString("vi", {
+        style: "currency",
+        currency: "VND",
+      });
+    document.querySelector("#countTickets").textContent = countTickets;
   }
 
   function setBooking(param) {

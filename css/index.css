@@ -31,6 +31,16 @@ body .screen {
   background-repeat: no-repeat;
   height: 130px;
 }
+body #countTickets {
+  padding: 10px 15px;
+  color: red;
+  font-size: 16px;
+  border-radius: 50%;
+  position: relative;
+  right: 53px;
+  bottom: 13px;
+  font-weight: bold;
+}
 body #seating .row-seat {
   display: grid;
   grid-template-columns: repeat(10, auto);

@@ -4,6 +4,8 @@ export default function payment() {
   const dbBooked = ["G5", "G6", "G7"];
   const dbBooking = storage.get("seat-booking");
   storage.set("seat-booked", dbBooked);
+  console.group("tình trạng ghế");
   console.log(`số ghế đã đặt: ${dbBooked}`);
   console.log(`số ghế đang book: ${dbBooking}`);
+  console.groupEnd();
 }
