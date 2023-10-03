@@ -2,20 +2,45 @@ import storage from "../util/storage.js";
 
 export default function booking() {
   let seatArr = storage.get("seat-booking");
+
   function updateTicketList() {
-    let arrBooking = storage.get("seat-booking");
-    let html = "";
-    for (let seat of arrBooking) {
-      html += `
-      <tr>
-          <td class="px-4 fw-bold">${seat}</td>
-          <td>65.000</td>
-          <td><button class="bg-danger text-white border-0 px-1 rounded-1"><i
-                  class="fa-solid fa-xmark"></i></button></td>
-       </tr> 
-      `;
-    }
+    const arrBooking = storage.get("seat-booking");
+    const arrTicket = arrBooking.map((id) => ({
+      colorPrice: ["E", "F", "G"].includes(id.charAt(0))
+        ? `class="fw-bold text-danger"`
+        : `class="fw-bold text-success"`,
+      id,
+      price: ["E", "F", "G"].includes(id.charAt(0)) ? 70000 : 65000,
+    }));
+    const html = arrTicket
+      .map(
+        ({ id, colorPrice, price }) => `
+    <tr>
+        <td class="px-4 fw-bold">${id}</td>
+        <td ${colorPrice}>${price.toLocaleString("vi", {
+          style: "currency",
+          currency: "VND",
+        })}</td>
+    </tr> 
+  `
+      )
+      .join("");
+
     document.querySelector("#ticketList").innerHTML = html;
+  }
+
+  function setBooking(param) {
+    param.classList.remove("booking");
+    seatArr = seatArr.filter((id) => id !== param.textContent);
+    storage.set("seat-booking", seatArr);
+    updateTicketList();
+  }
+
+  function undoBooking(param) {
+    param.classList.add("booking");
+    seatArr.push(param.textContent);
+    storage.set("seat-booking", seatArr);
+    updateTicketList();
   }
 
   const handleSeat = (function () {
@@ -23,18 +48,10 @@ export default function booking() {
     seats.forEach((seat) => {
       seat.addEventListener("click", (e) => {
         const thisSeat = e.target;
-        const idSeat = thisSeat.textContent;
         if (thisSeat.classList.contains("booking")) {
-          thisSeat.classList.remove("booking");
-          seatArr = seatArr.filter((id) => id !== idSeat);
-          storage.set("seat-booking", seatArr);
-          updateTicketList();
+          setBooking(thisSeat);
         } else {
-          thisSeat.classList.add("booking");
-          seatArr.push(idSeat);
-          // console.log(seatArr);
-          storage.set("seat-booking", seatArr);
-          updateTicketList();
+          undoBooking(thisSeat);
         }
       });
     });

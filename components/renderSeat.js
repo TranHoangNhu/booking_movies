@@ -1,8 +1,5 @@
 import storage from "../util/storage.js";
 
-const dbBooking = ["G5", "G6", "G7"];
-storage.set("seat-booked", dbBooking);
-
 export default function renderSeat() {
   const initSeat = (function () {
     const seatingContainer = document.getElementById("seating");

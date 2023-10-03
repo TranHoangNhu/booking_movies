@@ -8,6 +8,14 @@
   width: 700px;
   border-radius: 15px;
 }
+#offcanvasRight .offcanvas-body {
+  flex-grow: 0;
+  padding: 20px 70px;
+  overflow-y: auto;
+}
+#offcanvasRight .offcanvas-footer {
+  padding: 20px 70px;
+}
 
 body {
   overflow-x: hidden;

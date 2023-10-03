@@ -1,5 +1,9 @@
-// import storage from "../util/storage.js";
+import storage from "../util/storage.js";
 
 export default function payment() {
-  console.log("module payment imported");
+  const dbBooked = ["G5", "G6", "G7"];
+  const dbBooking = storage.get("seat-booking");
+  storage.set("seat-booked", dbBooked);
+  console.log(`số ghế đã đặt: ${dbBooked}`);
+  console.log(`số ghế đang book: ${dbBooking}`);
 }

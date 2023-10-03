@@ -1,4 +1,12 @@
 #offcanvasRight {
   width: 700px;
   border-radius: 15px;
+  .offcanvas-body {
+    flex-grow: 0;
+    padding: 20px 70px;
+    overflow-y: auto;
+  }
+  .offcanvas-footer{
+    padding: 20px 70px;
+  }
 }
