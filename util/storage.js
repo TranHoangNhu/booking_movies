@@ -5,4 +5,7 @@ export default {
   set(STORAGE_KEY, value) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
   },
+  destroy(STORAGE_KEY) {
+    localStorage.removeItem(STORAGE_KEY);
+  },
 };

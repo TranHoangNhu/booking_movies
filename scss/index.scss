@@ -19,13 +19,14 @@ body {
     height: 130px;
   }
   #countTickets {
-    padding: 10px 15px;
-    color: red;
+    padding: 8px;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: #fff;
     font-size: 16px;
-    border-radius: 50%;
+    border-radius: 15px;
     position: relative;
-    right: 53px;
-    bottom: 13px;
+    right: 26px;
+    bottom: -10px;
     font-weight: bold;
   }
   #seating {

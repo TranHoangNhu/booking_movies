@@ -20,9 +20,11 @@
     <div class="container d-flex flex-column gap-4" id="seating">
         <!-- JavaScript code will generate the seating arrangement here -->
     </div>
-    <button class="btn bg-none position-fixed top-0 end-0 me-5 mt-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-        aria-controls="offcanvasRight"><i class="fa-solid fa-ticket text-white me-2" style="font-size: 50px;"></i><span
-            id="countTickets"></span></button>
+    <button class="btn bg-none position-fixed top-0 end-0 me-5 mt-5" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-film text-white me-2"
+            style="font-size: 50px;"></i><span id="countTickets"></span></button>
+    <!-- modal bootstrap 5.2 -->
+    <!-- modal danh sách vé xem phim -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title fw-bold fs-2" id="offcanvasRightLabel">GHẾ ĐANG ĐẶT</h5>
@@ -42,10 +44,21 @@
             </table>
         </div>
         <div class="offcanvas-footer d-flex justify-content-between align-items-center">
-            <p class="mb-0 fw-bold fs-4 text-danger">tổng tiền: <span id="totalPrice"></span></p>
-            <button id="payment" class="btn btn-success float-end">thanh toán</button>
+            <!-- JavaScript code will generate the button payment here -->
         </div>
     </div>
+    <!-- modal đặt vé thành công -->
+    <div class="modal fade" id="paymentSuccess" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-bod d-flex justify-content-center align-items-center rounded-5">
+                <span class="text-warning fs-1 fw-bold">PAYMENT SUCCESS !!!</span>
+            </div>
+        </div>
+    </div>
+    <!-- end modal bootstrap 5.2 -->
+    <!-- cdn jquery 3.7.1 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
