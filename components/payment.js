@@ -1,6 +1,4 @@
 import storage from "../util/storage.js";
-import { updateTicketList, seatBooked, seatBooking } from "./renderSeat.js";
-import { arrTicket } from "./booking.js";
 
 export default function payment() {
   const handlePayment = () => {
@@ -8,11 +6,8 @@ export default function payment() {
     document.querySelector(".offcanvas-backdrop").classList.remove("show");
     $("#paymentSuccess").modal("show");
     setTimeout(function () {
-      console.log(arrTicket);
-      updateTicketList();
-      seatBooked();
-      seatBooking();
       $("#paymentSuccess").modal("hide");
+      window.location.reload();
     }, 2000);
     const dbBooked = storage.get("seat-booked");
     const dbBooking = storage.get("seat-booking");

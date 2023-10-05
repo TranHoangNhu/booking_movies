@@ -17,6 +17,10 @@
   padding: 20px 70px;
 }
 
+.modal-backdrop {
+  opacity: 0.9 !important;
+}
+
 body {
   overflow-x: hidden;
   background: url("../images/bg-body.jpg");
